@@ -24,23 +24,17 @@ html{scroll-behavior:smooth}
 body{background:var(--dark);color:var(--text);font-family:'Outfit',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden;cursor:none}
 
 /* CURSOR */
-#cur{position:fixed;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .2s,background .2s}
-#cur2{position:fixed;width:32px;height:32px;border:1px solid rgba(212,168,67,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s}
-body:hover #cur{opacity:1}
+#cur{position:fixed;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .2s}
+#cur2{position:fixed;width:32px;height:32px;border:1px solid rgba(212,168,67,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:24px 56px;transition:background .4s,padding .4s}
+/* NAV — only logo */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:24px 56px;transition:background .4s,padding .4s}
 nav.scrolled{background:rgba(8,8,8,.96);padding:16px 56px;border-bottom:1px solid var(--border2)}
-.logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;letter-spacing:3px;color:var(--gold);text-decoration:none;text-transform:uppercase}
-.nav-links{display:flex;gap:36px;list-style:none}
-.nav-links a{color:var(--muted2);text-decoration:none;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;font-weight:400;transition:color .3s}
-.nav-links a:hover{color:var(--gold)}
-.nav-cta{padding:9px 24px;border:1px solid var(--border);color:var(--gold);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all .3s}
-.nav-cta:hover{background:var(--gold);color:var(--dark)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;letter-spacing:4px;color:var(--gold);text-decoration:none;text-transform:uppercase}
 
 /* HERO */
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:100px 56px 60px;position:relative;overflow:hidden;gap:60px}
-.hero-noise{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;opacity:.4}
+.hero-noise{position:absolute;inset:0;opacity:.4;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E")}
 .hero-glow{position:absolute;top:-20%;right:-10%;width:700px;height:700px;background:radial-gradient(circle,rgba(212,168,67,.07) 0%,transparent 65%);pointer-events:none}
 .hero-glow2{position:absolute;bottom:-20%;left:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(212,168,67,.04) 0%,transparent 65%);pointer-events:none}
 
@@ -51,126 +45,80 @@ nav.scrolled{background:rgba(8,8,8,.96);padding:16px 56px;border-bottom:1px soli
 .avail-dot{width:7px;height:7px;background:#4ade80;border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(74,222,128,.4)}50%{box-shadow:0 0 0 6px rgba(74,222,128,0)}}
 
-h1.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(64px,7vw,96px);font-weight:300;line-height:.95;letter-spacing:-1px;margin-bottom:8px}
-h1.hero-name strong{font-weight:700;color:var(--gold);display:block}
+h1.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(72px,8vw,110px);font-weight:700;line-height:.95;letter-spacing:-1px;margin-bottom:16px;color:var(--gold)}
 .hero-role{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.2vw,26px);font-weight:300;font-style:italic;color:var(--muted2);margin-bottom:32px;letter-spacing:.5px}
-.hero-desc{font-size:15px;color:var(--muted);line-height:1.85;max-width:440px;margin-bottom:44px}
+.hero-desc{font-size:15px;color:var(--muted);line-height:1.85;max-width:460px;margin-bottom:44px}
+.hero-desc strong{color:var(--gold2);font-weight:500}
 
 .hero-btns{display:flex;gap:16px;flex-wrap:wrap}
-.btn-gold{display:inline-flex;align-items:center;gap:10px;padding:14px 34px;background:var(--gold);color:var(--dark);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .3s;font-family:'Outfit',sans-serif}
-.btn-gold:hover{background:var(--gold2);transform:translateY(-2px)}
-.btn-outline{display:inline-flex;align-items:center;gap:10px;padding:14px 34px;border:1px solid var(--border);color:var(--muted2);font-size:12px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .3s}
-.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.btn-whatsapp{display:inline-flex;align-items:center;gap:10px;padding:15px 36px;background:var(--gold);color:var(--dark);font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .3s;font-family:'Outfit',sans-serif}
+.btn-whatsapp:hover{background:var(--gold2);transform:translateY(-2px)}
 
 .hero-stats{display:flex;gap:40px;margin-top:52px;padding-top:40px;border-top:1px solid var(--border2)}
-.stat-n{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:800;color:var(--gold);line-height:1}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:700;color:var(--gold);line-height:1}
 .stat-l{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:4px}
 
-.hero-right{position:relative;z-index:1;display:flex;flex-direction:column;gap:12px}
-.hero-reel-card{background:var(--dark3);border:1px solid var(--border2);padding:20px 24px;display:flex;align-items:center;gap:16px;transition:border-color .3s,transform .3s;cursor:none;text-decoration:none}
-.hero-reel-card:hover{border-color:var(--border);transform:translateX(6px)}
-.reel-icon{width:44px;height:44px;background:rgba(212,168,67,.1);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold)}
-.reel-info-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:2px}
-.reel-info-sub{font-size:11px;color:var(--muted);letter-spacing:1px}
-.reel-arrow{margin-left:auto;color:var(--muted);transition:color .3s}
-.hero-reel-card:hover .reel-arrow{color:var(--gold)}
+/* HERO RIGHT — 5 category cards */
+.hero-right{position:relative;z-index:1;display:flex;flex-direction:column;gap:10px}
+.hero-cat-card{background:var(--dark3);border:1px solid var(--border2);padding:18px 24px;display:flex;align-items:center;gap:16px;transition:border-color .3s,transform .3s,background .3s;cursor:none;text-decoration:none}
+.hero-cat-card:hover{border-color:var(--border);transform:translateX(6px);background:var(--dark4)}
+.cat-icon{width:42px;height:42px;background:rgba(212,168,67,.08);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold)}
+.cat-card-title{font-size:14px;font-weight:500;color:var(--text)}
+.cat-card-sub{font-size:11px;color:var(--muted);letter-spacing:1px;margin-top:2px}
+.cat-arrow{margin-left:auto;color:var(--muted);transition:color .3s;font-size:18px}
+.hero-cat-card:hover .cat-arrow{color:var(--gold)}
 
 /* SECTION COMMON */
-.sec{padding:110px 56px}
+.sec{padding:100px 56px}
 .sec-inner{max-width:1200px;margin:0 auto}
 .sec-tag{display:flex;align-items:center;gap:12px;margin-bottom:16px}
 .sec-tag-line{width:28px;height:1px;background:var(--gold)}
 .sec-tag-text{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:400}
-.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,62px);font-weight:600;line-height:1.05;letter-spacing:-.5px;margin-bottom:16px}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,58px);font-weight:600;line-height:1.05;margin-bottom:16px}
 .sec-sub{font-size:15px;color:var(--muted);max-width:520px;line-height:1.8}
 
-/* WORK / PORTFOLIO */
-.work{background:var(--dark2)}
-.cat-tabs{display:flex;gap:0;flex-wrap:wrap;margin:48px 0 0;border-bottom:1px solid var(--border2)}
-.cat-tab{padding:12px 28px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);background:transparent;border:none;border-bottom:2px solid transparent;cursor:none;font-family:'Outfit',sans-serif;transition:all .3s;margin-bottom:-1px}
-.cat-tab:hover{color:var(--muted2)}
-.cat-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+/* SPECIALIZATIONS */
+.spec-section{background:var(--dark2)}
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:50px}
+.spec-card{padding:40px 32px;background:var(--dark3);position:relative;overflow:hidden;transition:background .3s}
+.spec-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+.spec-card:hover::after{transform:scaleX(1)}
+.spec-card:hover{background:var(--dark4)}
+.spec-num{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;color:rgba(212,168,67,.07);line-height:1;margin-bottom:16px}
+.spec-title{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;margin-bottom:10px}
+.spec-desc{font-size:13px;color:var(--muted);line-height:1.8}
 
-.cat-panel{display:none}
-.cat-panel.active{display:block}
+/* SKILLS + NUMBERS */
+.skills-numbers{background:var(--dark)}
+.sn-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:56px;align-items:start}
 
-/* REELS GRID */
-.reels-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin-top:36px}
-.reel-embed-card{position:relative;background:var(--dark3);border:1px solid var(--border2);overflow:hidden;transition:border-color .4s,transform .4s;cursor:none}
-.reel-embed-card:hover{border-color:var(--border);transform:translateY(-4px)}
-.reel-thumb{width:100%;aspect-ratio:9/16;position:relative;overflow:hidden;background:var(--dark4)}
-.reel-thumb iframe{width:100%;height:100%;border:none;pointer-events:none}
-.reel-thumb-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;background:linear-gradient(to top,rgba(8,8,8,.9) 0%,transparent 50%);opacity:0;transition:opacity .3s}
-.reel-embed-card:hover .reel-thumb-overlay{opacity:1}
-.reel-open-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:var(--gold);color:var(--dark);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;text-decoration:none;font-family:'Outfit',sans-serif}
-.reel-platform{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-
-/* YT GRID */
-.yt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px;margin-top:36px}
-.yt-card{background:var(--dark3);border:1px solid var(--border2);overflow:hidden;transition:border-color .4s,transform .4s}
-.yt-card:hover{border-color:var(--border);transform:translateY(-4px)}
-.yt-embed{width:100%;aspect-ratio:16/9}
-.yt-embed iframe{width:100%;height:100%;border:none;display:block}
-.yt-info{padding:16px 20px}
-.yt-title{font-size:13px;font-weight:500;color:var(--text);margin-bottom:4px}
-.yt-meta{font-size:11px;color:var(--muted);letter-spacing:1px}
-
-/* MUSIC FILM */
-.music-card{background:var(--dark3);border:1px solid var(--border);padding:48px;display:flex;align-items:center;gap:48px;margin-top:36px;transition:border-color .3s}
-.music-card:hover{border-color:var(--gold)}
-.music-icon{width:100px;height:100px;background:rgba(212,168,67,.08);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.music-info h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;margin-bottom:10px}
-.music-info p{font-size:14px;color:var(--muted);line-height:1.8;max-width:500px;margin-bottom:24px}
-.music-tags{display:flex;gap:10px;flex-wrap:wrap}
-.mtag{padding:5px 14px;border:1px solid var(--border);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
-
-/* ABOUT */
-.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;margin-top:64px;align-items:start}
-.about-left{}
-.about-intro{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;font-style:italic;color:var(--muted2);line-height:1.7;margin-bottom:28px;border-left:2px solid var(--gold);padding-left:24px}
-.about-body{font-size:15px;color:var(--muted);line-height:1.9;margin-bottom:20px}
-
-.skills-title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin:36px 0 20px}
-.skills-list{display:flex;flex-direction:column;gap:14px}
-.skill-item{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.skill-name{font-size:13px;color:var(--text);min-width:160px;letter-spacing:.5px}
+.skills-title-sm{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+.skills-list{display:flex;flex-direction:column;gap:16px}
+.skill-item{display:flex;align-items:center;gap:16px}
+.skill-name{font-size:13px;color:var(--text);min-width:160px}
 .skill-track{flex:1;height:2px;background:rgba(255,255,255,.06);border-radius:2px;position:relative}
 .skill-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));border-radius:2px;width:0;transition:width 1.4s cubic-bezier(.22,1,.36,1)}
 .skill-pct{font-size:11px;color:var(--muted);min-width:32px;text-align:right}
 
-.about-right{}
-.info-blocks{display:flex;flex-direction:column;gap:2px}
-.info-block{background:var(--dark3);border:1px solid var(--border2);padding:28px 32px;transition:border-color .3s}
-.info-block:hover{border-color:var(--border)}
-.info-block-title{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-.info-items{display:flex;flex-direction:column;gap:10px}
-.info-item{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--muted2)}
-.info-item::before{content:'';width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0}
-
-/* SERVICES */
-.services{background:var(--dark2)}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:60px}
-.service-card{padding:44px 36px;background:var(--dark3);position:relative;overflow:hidden;transition:background .3s}
-.service-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
-.service-card:hover::after{transform:scaleX(1)}
-.service-card:hover{background:var(--dark4)}
-.svc-num{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:700;color:rgba(212,168,67,.07);line-height:1;margin-bottom:20px}
-.svc-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;margin-bottom:12px}
-.svc-desc{font-size:14px;color:var(--muted);line-height:1.8}
+.numbers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.num-card{background:var(--dark3);padding:36px 28px;text-align:center;border:1px solid var(--border2);transition:border-color .3s}
+.num-card:hover{border-color:var(--border)}
+.num-big{font-family:'Cormorant Garamond',serif;font-size:54px;font-weight:700;color:var(--gold);line-height:1}
+.num-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:8px}
 
 /* CONTACT */
-.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:64px}
-.contact-left{}
+.contact-sec{background:var(--dark2)}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:56px}
 .contact-intro{font-size:16px;color:var(--muted);line-height:1.9;margin-bottom:44px}
+.contact-intro strong{color:var(--gold2);font-weight:500}
 .contact-details{display:flex;flex-direction:column;gap:24px}
 .c-item{display:flex;align-items:center;gap:18px}
 .c-icon{width:46px;height:46px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--gold);flex-shrink:0}
 .c-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
-.c-val{font-size:15px;color:var(--text)}
-.c-val a{color:var(--text);text-decoration:none;transition:color .3s}
+.c-val a{color:var(--text);text-decoration:none;font-size:15px;transition:color .3s}
 .c-val a:hover{color:var(--gold)}
 
-.contact-form{display:flex;flex-direction:column;gap:24px}
+.contact-form{display:flex;flex-direction:column;gap:22px}
 .cf-group{}
 .cf-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:10px}
 .cf-input,.cf-textarea{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.1);padding:12px 0;color:var(--text);font-family:'Outfit',sans-serif;font-size:15px;font-weight:300;outline:none;transition:border-color .3s}
@@ -181,42 +129,36 @@ h1.hero-name strong{font-weight:700;color:var(--gold);display:block}
 .cf-btn:hover{background:var(--gold2);transform:translateY(-2px)}
 
 /* FOOTER */
-footer{padding:52px 56px;border-top:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between}
-.footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:3px;color:var(--gold);font-weight:600;text-transform:uppercase}
+footer{padding:48px 56px;border-top:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spacing:4px;color:var(--gold);font-weight:700;text-transform:uppercase}
 .footer-copy{font-size:12px;color:var(--muted);letter-spacing:1px}
-.footer-socials{display:flex;gap:16px}
-.fsoc{width:38px;height:38px;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;transition:all .3s;font-size:15px}
+.footer-socials{display:flex;gap:14px}
+.fsoc{width:38px;height:38px;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;transition:all .3s}
 .fsoc:hover{border-color:var(--gold);color:var(--gold)}
 
 /* FADE UP */
 .fu{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
 .fu.vis{opacity:1;transform:none}
-.fu:nth-child(2){transition-delay:.1s}
-.fu:nth-child(3){transition-delay:.2s}
-.fu:nth-child(4){transition-delay:.3s}
-.fu:nth-child(5){transition-delay:.4s}
-.fu:nth-child(6){transition-delay:.5s}
+.fu:nth-child(2){transition-delay:.08s}
+.fu:nth-child(3){transition-delay:.16s}
+.fu:nth-child(4){transition-delay:.24s}
+.fu:nth-child(5){transition-delay:.32s}
+.fu:nth-child(6){transition-delay:.40s}
 
-/* SCROLLBAR */
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:var(--dark)}
 ::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
 
-/* MOBILE */
 @media(max-width:900px){
   nav{padding:18px 24px}
-  .nav-links,.nav-cta{display:none}
   .hero{grid-template-columns:1fr;padding:100px 24px 60px;gap:40px}
   .hero-right{display:none}
-  .hero-stats{gap:28px}
-  .sec{padding:80px 24px}
-  .about-grid,.contact-wrap{grid-template-columns:1fr;gap:48px}
-  .services-grid{grid-template-columns:1fr}
-  .cat-tabs{overflow-x:auto;flex-wrap:nowrap;padding-bottom:0}
-  .cat-tab{white-space:nowrap}
+  .hero-stats{gap:24px}
+  .sec{padding:72px 24px}
+  .spec-grid{grid-template-columns:1fr}
+  .sn-grid,.contact-wrap{grid-template-columns:1fr;gap:48px}
+  .numbers-grid{grid-template-columns:repeat(3,1fr)}
   footer{flex-direction:column;gap:20px;text-align:center}
-  .music-card{flex-direction:column;padding:32px 24px;text-align:center}
-  .yt-grid,.reels-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -225,16 +167,9 @@ footer{padding:52px 56px;border-top:1px solid var(--border2);display:flex;align-
 <div id="cur"></div>
 <div id="cur2"></div>
 
-<!-- NAV -->
+<!-- NAV — logo only -->
 <nav id="nav">
   <a href="#" class="logo">Jeetu</a>
-  <ul class="nav-links">
-    <li><a href="#work">Work</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">Hire Me</a>
 </nav>
 
 <!-- HERO -->
@@ -249,395 +184,221 @@ footer{padding:52px 56px;border-top:1px solid var(--border2);display:flex;align-
       <span class="eyebrow-text">Available for Projects</span>
       <div class="avail-dot"></div>
     </div>
-    <h1 class="hero-name">
-  <strong>Jeetu</strong>
-</h1>
-    <p class="hero-role">Video Editor & Filmmaker</p>
-    <p class="hero-desc">Crafting cinematic stories from raw footage — from AI films & fiction to podcasts, music films and brand content. Every frame, intentional.</p>
+
+    <h1 class="hero-name">Jeetu</h1>
+    <p class="hero-role">Professional Video Editor</p>
+
+    <p class="hero-desc">
+      I turn your raw footage into <strong>scroll-stopping Instagram Reels</strong> that grab attention in the first second — and keep viewers hooked till the last frame.<br><br>
+      From AI films &amp; fiction to podcasts, music films and brand reels — <strong>every reel I edit is built to perform.</strong>
+    </p>
+
     <div class="hero-btns">
-      <a href="#work" class="btn-gold">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        Watch My Work
+      <a href="https://wa.me/918076130628" target="_blank" class="btn-whatsapp">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        Contact Me
       </a>
-      <a href="https://wa.me/918076130628" target="_blank" class="btn-outline">WhatsApp Me</a>
     </div>
+
     <div class="hero-stats">
       <div>
-        <div class="stat-n">2+</div>
+        <div class="stat-n">3+</div>
         <div class="stat-l">Years Exp</div>
       </div>
-    
+      <div>
+        <div class="stat-n">2000+</div>
+        <div class="stat-l">Reels Edited</div>
+      </div>
+      <div>
+        <div class="stat-n">50+</div>
+        <div class="stat-l">Happy Clients</div>
+      </div>
     </div>
   </div>
 
+  <!-- RIGHT SIDE — 5 category links -->
   <div class="hero-right">
-    <a href="https://www.instagram.com/reel/DX7HcVhS4N_/" target="_blank" class="hero-reel-card">
-      <div class="reel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-      <div>
-        <div class="reel-info-title">AI Film</div>
+    <a href="https://drive.google.com/drive/folders/1YNZ4wc-psdxSUtBwsIukYAmD9rhdU_2Q" target="_blank" class="hero-cat-card">
+      <div class="cat-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
       </div>
-      <div class="reel-arrow">→</div>
+      <div>
+        <div class="cat-card-title">Reels</div>
+        <div class="cat-card-sub">Best Work · Drive Folder</div>
+      </div>
+      <div class="cat-arrow">→</div>
     </a>
-    <a href="https://www.instagram.com/reel/DYr1YSZyQp6/" target="_blank" class="hero-reel-card">
-      <div class="reel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-      <div>
-        <div class="reel-info-title">Best Reel</div>
+    <a href="https://drive.google.com/drive/folders/19g08wcbYrFYg6T8jwPmsvRBJL-wchsPi" target="_blank" class="hero-cat-card">
+      <div class="cat-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a2 2 0 012 2v2a2 2 0 01-2 2 2 2 0 01-2-2V4a2 2 0 012-2zm0 16a2 2 0 012 2 2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2zm8-8a2 2 0 012 2 2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2zM4 12a2 2 0 012 2 2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2z"/></svg>
       </div>
-      <div class="reel-arrow">→</div>
+      <div>
+        <div class="cat-card-title">AI Reels</div>
+        <div class="cat-card-sub">AI Film Edits · Drive Folder</div>
+      </div>
+      <div class="cat-arrow">→</div>
     </a>
-    <a href="https://youtu.be/St340FiIExU" target="_blank" class="hero-reel-card">
-      <div class="reel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.97A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg></div>
-      <div>
-        <div class="reel-info-title">Podcast</div>
+    <a href="https://drive.google.com/drive/folders/1C4dDtJiDkv4bzOGHOpLCL8OtMg75miw6" target="_blank" class="hero-cat-card">
+      <div class="cat-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
       </div>
-      <div class="reel-arrow">→</div>
+      <div>
+        <div class="cat-card-title">Fiction Reels</div>
+        <div class="cat-card-sub">Fiction Film Edits · Drive Folder</div>
+      </div>
+      <div class="cat-arrow">→</div>
     </a>
-    <a href="https://www.instagram.com/reel/DYzS_48pSq0/" target="_blank" class="hero-reel-card">
-      <div class="reel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
-      <div>
-        <div class="reel-info-title">Fiction</div>
+    <a href="https://drive.google.com/drive/folders/1cV5VhDTYOtW5U8A4m6YdpVzTwH-uznO5" target="_blank" class="hero-cat-card">
+      <div class="cat-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 013 3v6a3 3 0 01-6 0V5a3 3 0 013-3zm7 9a7 7 0 01-14 0H3a9 9 0 0018 0h-2z"/></svg>
       </div>
-      <div class="reel-arrow">→</div>
+      <div>
+        <div class="cat-card-title">Podcast Reels</div>
+        <div class="cat-card-sub">Podcast Clip Edits · Drive Folder</div>
+      </div>
+      <div class="cat-arrow">→</div>
     </a>
-    <a href="https://drive.google.com/file/d/1RNjlv7thioA2idUCCmxvfoBvpPQAUK0B/view" target="_blank" class="hero-reel-card">
-      <div class="reel-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
-      <div>
-        <div class="reel-info-title">Music Film</div>
+    <a href="https://drive.google.com/drive/folders/1c8vmkZ9QShP1PtyOpQo2CBLDA5TytdY5" target="_blank" class="hero-cat-card">
+      <div class="cat-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
       </div>
-      <div class="reel-arrow">→</div>
+      <div>
+        <div class="cat-card-title">Music Reels</div>
+        <div class="cat-card-sub">Music Film Edits · Drive Folder</div>
+      </div>
+      <div class="cat-arrow">→</div>
     </a>
   </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section class="sec work" id="work">
+<!-- SPECIALIZATIONS -->
+<section class="sec spec-section" id="services">
   <div class="sec-inner">
-    <div class="sec-tag"><div class="sec-tag-line"></div><div class="sec-tag-text">Selected Work</div></div>
-    <h2 class="sec-title">My Portfolio</h2>
-    <p class="sec-sub">Click any thumbnail to watch on Instagram or YouTube. Every project tells a story.</p>
-
-    <div class="cat-tabs">
-      <button class="cat-tab active" onclick="switchTab('reels',this)">Best Reels</button>
-      <button class="cat-tab" onclick="switchTab('ai',this)">AI Films</button>
-      <button class="cat-tab" onclick="switchTab('fiction',this)">Fiction Films</button>
-      <button class="cat-tab" onclick="switchTab('podcast',this)">Podcast</button>
-      <button class="cat-tab" onclick="switchTab('podcast-reels',this)">Podcast Reels</button>
-      <button class="cat-tab" onclick="switchTab('music',this)">Music Film</button>
-    </div>
-
-    <!-- BEST REELS -->
-    <div class="cat-panel active" id="panel-reels">
-      <div class="reels-grid">
-        <div class="reel-embed-card fu">
-          <div class="reel-thumb" style="background:linear-gradient(135deg,#0a0a0a,#1a1200)">
-            <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(212,168,67,0.5)"><path d="M8 5v14l11-7z"/></svg>
-              <span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(212,168,67,0.5)">Reel 01</span>
-            </div>
-          </div>
-          <div class="reel-thumb-overlay">
-            <div class="reel-platform">Instagram Reel</div>
-            <a href="https://www.instagram.com/reel/DYr1YSZyQp6/" target="_blank" class="reel-open-btn">Watch on Instagram ↗</a>
-          </div>
-        </div>
-        <div class="reel-embed-card fu">
-          <div class="reel-thumb" style="background:linear-gradient(135deg,#0a000a,#1a0015)">
-            <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(212,168,67,0.5)"><path d="M8 5v14l11-7z"/></svg>
-              <span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(212,168,67,0.5)">Reel 02</span>
-            </div>
-          </div>
-          <div class="reel-thumb-overlay">
-            <div class="reel-platform">Instagram Reel</div>
-            <a href="https://www.instagram.com/reel/DXUBOhekaSV/" target="_blank" class="reel-open-btn">Watch on Instagram ↗</a>
-          </div>
-        </div>
-        <div class="reel-embed-card fu">
-          <div class="reel-thumb" style="background:linear-gradient(135deg,#000a0a,#001520)">
-            <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(212,168,67,0.5)"><path d="M8 5v14l11-7z"/></svg>
-              <span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(212,168,67,0.5)">Reel 03</span>
-            </div>
-          </div>
-          <div class="reel-thumb-overlay">
-            <div class="reel-platform">Instagram Reel</div>
-            <a href="https://www.instagram.com/reel/DVK-iIaDIZC/" target="_blank" class="reel-open-btn">Watch on Instagram ↗</a>
-          </div>
-        </div>
-        <div class="reel-embed-card fu">
-          <div class="reel-thumb" style="background:linear-gradient(135deg,#0a0500,#201000)">
-            <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(212,168,67,0.5)"><path d="M8 5v14l11-7z"/></svg>
-              <span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(212,168,67,0.5)">Reel 04</span>
-            </div>
-          </div>
-          <div class="reel-thumb-overlay">
-            <div class="reel-platform">Instagram Reel</div>
-            <a href="https://www.instagram.com/reel/DNYEQZiS0DG/" target="_blank" class="reel-open-btn">Watch on Instagram ↗</a>
-          </div>
-        </div>
+    <div class="sec-tag"><div class="sec-tag-line"></div><div class="sec-tag-text">What I Do</div></div>
+    <h2 class="sec-title">Specializations</h2>
+    <p class="sec-sub">Every format, mastered. Every reel, crafted to stop the scroll and drive results for your brand.</p>
+    <div class="spec-grid">
+      <div class="spec-card fu">
+        <div class="spec-num">01</div>
+        <div class="spec-title">Instagram Reels</div>
+        <div class="spec-desc">High-retention reels that hook viewers in 1 second and keep them watching till the end. Beat-sync, fast cuts, captions — optimized for the algorithm.</div>
       </div>
-      <p style="text-align:center;margin-top:20px;font-size:12px;color:var(--muted);letter-spacing:1px">↑ Hover karo aur Instagram par watch karo</p>
-    </div>
-
-    <!-- AI FILMS -->
-    <div class="cat-panel" id="panel-ai">
-      <div class="reels-grid">
-        <div class="reel-embed-card fu">
-          <div class="reel-thumb" style="background:linear-gradient(135deg,#050010,#150030)">
-            <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(180,100,255,0.5)"><path d="M12 2a2 2 0 012 2v2a2 2 0 01-2 2 2 2 0 01-2-2V4a2 2 0 012-2zm0 16a2 2 0 012 2v0a2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2zm8-8a2 2 0 012 2 2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2zM4 12a2 2 0 012 2 2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2z"/></svg>
-              <span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(180,100,255,0.6)">AI Film 01</span>
-            </div>
-          </div>
-          <div class="reel-thumb-overlay">
-            <div class="reel-platform">Instagram Reel</div>
-            <a href="https://www.instagram.com/reel/DX7HcVhS4N_/" target="_blank" class="reel-open-btn">Watch on Instagram ↗</a>
-          </div>
-        </div>
-        <div class="reel-embed-card fu">
-          <div class="reel-thumb" style="background:linear-gradient(135deg,#000a15,#001530)">
-            <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(180,100,255,0.5)"><path d="M12 2a2 2 0 012 2v2a2 2 0 01-2 2 2 2 0 01-2-2V4a2 2 0 012-2zm0 16a2 2 0 012 2v0a2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2zm8-8a2 2 0 012 2 2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2zM4 12a2 2 0 012 2 2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2z"/></svg>
-              <span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(180,100,255,0.6)">AI Film 02</span>
-            </div>
-          </div>
-          <div class="reel-thumb-overlay">
-            <div class="reel-platform">Instagram Reel</div>
-            <a href="https://www.instagram.com/reel/DYuWHSeJIp5/" target="_blank" class="reel-open-btn">Watch on Instagram ↗</a>
-          </div>
-        </div>
-        <div class="reel-embed-card fu">
-          <div class="reel-thumb" style="background:linear-gradient(135deg,#100510,#250025)">
-            <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(180,100,255,0.5)"><path d="M12 2a2 2 0 012 2v2a2 2 0 01-2 2 2 2 0 01-2-2V4a2 2 0 012-2zm0 16a2 2 0 012 2v0a2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2zm8-8a2 2 0 012 2 2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2zM4 12a2 2 0 012 2 2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2z"/></svg>
-              <span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(180,100,255,0.6)">AI Film 03</span>
-            </div>
-          </div>
-          <div class="reel-thumb-overlay">
-            <div class="reel-platform">Instagram Reel</div>
-            <a href="https://www.instagram.com/reel/DYRtNANpFRR/" target="_blank" class="reel-open-btn">Watch on Instagram ↗</a>
-          </div>
-        </div>
-        <div class="reel-embed-card fu">
-          <div class="reel-thumb" style="background:linear-gradient(135deg,#0a0a00,#201800)">
-            <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(180,100,255,0.5)"><path d="M12 2a2 2 0 012 2v2a2 2 0 01-2 2 2 2 0 01-2-2V4a2 2 0 012-2zm0 16a2 2 0 012 2v0a2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2zm8-8a2 2 0 012 2 2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2zM4 12a2 2 0 012 2 2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2z"/></svg>
-              <span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(180,100,255,0.6)">AI Film 04</span>
-            </div>
-          </div>
-          <div class="reel-thumb-overlay">
-            <div class="reel-platform">Instagram Reel</div>
-            <a href="https://www.instagram.com/reel/DXHaYTKkuBp/" target="_blank" class="reel-open-btn">Watch on Instagram ↗</a>
-          </div>
-        </div>
-        <div class="reel-embed-card fu">
-          <div class="reel-thumb" style="background:linear-gradient(135deg,#001010,#002020)">
-            <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(180,100,255,0.5)"><path d="M12 2a2 2 0 012 2v2a2 2 0 01-2 2 2 2 0 01-2-2V4a2 2 0 012-2zm0 16a2 2 0 012 2v0a2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2zm8-8a2 2 0 012 2 2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2zM4 12a2 2 0 012 2 2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2z"/></svg>
-              <span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(180,100,255,0.6)">AI Film 05</span>
-            </div>
-          </div>
-          <div class="reel-thumb-overlay">
-            <div class="reel-platform">Instagram Reel</div>
-            <a href="https://www.instagram.com/reel/DYjuogbqJhD/" target="_blank" class="reel-open-btn">Watch on Instagram ↗</a>
-          </div>
-        </div>
+      <div class="spec-card fu">
+        <div class="spec-num">02</div>
+        <div class="spec-title">AI Films</div>
+        <div class="spec-desc">Cutting-edge AI-generated film editing. I combine AI visuals with cinematic storytelling to create content that looks like the future.</div>
+      </div>
+      <div class="spec-card fu">
+        <div class="spec-num">03</div>
+        <div class="spec-title">Fiction Films</div>
+        <div class="spec-desc">Narrative short films edited for emotion and impact. Precise cuts, color grading and sound design that makes every scene feel real.</div>
+      </div>
+      <div class="spec-card fu">
+        <div class="spec-num">04</div>
+        <div class="spec-title">Podcast Editing</div>
+        <div class="spec-desc">Full podcast production — long-form YouTube videos and punchy Instagram clips that grow your audience fast.</div>
+      </div>
+      <div class="spec-card fu">
+        <div class="spec-num">05</div>
+        <div class="spec-title">Music Films</div>
+        <div class="spec-desc">Cinematic music videos with precise beat-sync, mood-matched color grading and a visual language that elevates every track.</div>
+      </div>
+      <div class="spec-card fu">
+        <div class="spec-num">06</div>
+        <div class="spec-title">Film Ads &amp; Promos</div>
+        <div class="spec-desc">Brand films, trailers and promo videos that grab attention in 3 seconds and leave a lasting impression on your audience.</div>
       </div>
     </div>
-
-    <!-- FICTION FILMS -->
-    <div class="cat-panel" id="panel-fiction">
-      <div class="reels-grid">
-        <div class="reel-embed-card fu"><div class="reel-thumb" style="background:linear-gradient(135deg,#0a0500,#201008)"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px"><svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(212,168,67,0.5)"><path d="M7 4v16l13-8L7 4z"/></svg><span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(212,168,67,0.5)">Fiction 01</span></div></div><div class="reel-thumb-overlay"><div class="reel-platform">Instagram Reel</div><a href="https://www.instagram.com/reel/DYzS_48pSq0/" target="_blank" class="reel-open-btn">Watch ↗</a></div></div>
-        <div class="reel-embed-card fu"><div class="reel-thumb" style="background:linear-gradient(135deg,#050a00,#101500)"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px"><svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(212,168,67,0.5)"><path d="M7 4v16l13-8L7 4z"/></svg><span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(212,168,67,0.5)">Fiction 02</span></div></div><div class="reel-thumb-overlay"><div class="reel-platform">Instagram Reel</div><a href="https://www.instagram.com/reel/DYlrJMwpnte/" target="_blank" class="reel-open-btn">Watch ↗</a></div></div>
-        <div class="reel-embed-card fu"><div class="reel-thumb" style="background:linear-gradient(135deg,#000510,#000f25)"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px"><svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(212,168,67,0.5)"><path d="M7 4v16l13-8L7 4z"/></svg><span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(212,168,67,0.5)">Fiction 03</span></div></div><div class="reel-thumb-overlay"><div class="reel-platform">Instagram Reel</div><a href="https://www.instagram.com/reel/DKLwcILPaaF/" target="_blank" class="reel-open-btn">Watch ↗</a></div></div>
-        <div class="reel-embed-card fu"><div class="reel-thumb" style="background:linear-gradient(135deg,#100005,#250010)"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px"><svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(212,168,67,0.5)"><path d="M7 4v16l13-8L7 4z"/></svg><span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(212,168,67,0.5)">Fiction 04</span></div></div><div class="reel-thumb-overlay"><div class="reel-platform">Instagram Reel</div><a href="https://www.instagram.com/reel/DJcbjStzzKS/" target="_blank" class="reel-open-btn">Watch ↗</a></div></div>
-        <div class="reel-embed-card fu"><div class="reel-thumb" style="background:linear-gradient(135deg,#080808,#181010)"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px"><svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(212,168,67,0.5)"><path d="M7 4v16l13-8L7 4z"/></svg><span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(212,168,67,0.5)">Fiction 05</span></div></div><div class="reel-thumb-overlay"><div class="reel-platform">Instagram Reel</div><a href="https://www.instagram.com/reel/DYUqpC4tUNY/" target="_blank" class="reel-open-btn">Watch ↗</a></div></div>
-      </div>
-    </div>
-
-    <!-- PODCAST (YT) -->
-    <div class="cat-panel" id="panel-podcast">
-      <div class="yt-grid">
-        <div class="yt-card fu">
-          <div class="yt-embed"><iframe src="https://www.youtube.com/embed/St340FiIExU" allowfullscreen loading="lazy"></iframe></div>
-          <div class="yt-info"><div class="yt-title">Podcast Edit — 01</div><div class="yt-meta">YouTube · Podcast Editing</div></div>
-        </div>
-        <div class="yt-card fu">
-          <div class="yt-embed"><iframe src="https://www.youtube.com/embed/OkRDd1tslUs" allowfullscreen loading="lazy"></iframe></div>
-          <div class="yt-info"><div class="yt-title">Podcast Edit — 02</div><div class="yt-meta">YouTube · Podcast Editing</div></div>
-        </div>
-        <div class="yt-card fu">
-          <div class="yt-embed"><iframe src="https://www.youtube.com/embed/Khmino1tCQE" allowfullscreen loading="lazy"></iframe></div>
-          <div class="yt-info"><div class="yt-title">Podcast Edit — 03</div><div class="yt-meta">YouTube · Podcast Editing</div></div>
-        </div>
-        <div class="yt-card fu">
-          <div class="yt-embed"><iframe src="https://www.youtube.com/embed/L_jwGr4suI8" allowfullscreen loading="lazy"></iframe></div>
-          <div class="yt-info"><div class="yt-title">Podcast Edit — 04</div><div class="yt-meta">YouTube · Podcast Editing</div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PODCAST REELS -->
-    <div class="cat-panel" id="panel-podcast-reels">
-      <div class="reels-grid">
-        <div class="reel-embed-card fu"><div class="reel-thumb" style="background:linear-gradient(135deg,#001005,#002010)"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px"><svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(100,220,150,0.5)"><path d="M12 2a3 3 0 013 3v6a3 3 0 01-6 0V5a3 3 0 013-3zm7 9a7 7 0 01-14 0H3a9 9 0 0018 0h-2z"/></svg><span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(100,220,150,0.5)">Podcast Reel 01</span></div></div><div class="reel-thumb-overlay"><div class="reel-platform">Instagram Reel</div><a href="https://www.instagram.com/reel/DY9brNoPX-_/" target="_blank" class="reel-open-btn">Watch ↗</a></div></div>
-        <div class="reel-embed-card fu"><div class="reel-thumb" style="background:linear-gradient(135deg,#050010,#100020)"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px"><svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(100,220,150,0.5)"><path d="M12 2a3 3 0 013 3v6a3 3 0 01-6 0V5a3 3 0 013-3zm7 9a7 7 0 01-14 0H3a9 9 0 0018 0h-2z"/></svg><span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(100,220,150,0.5)">Podcast Reel 02</span></div></div><div class="reel-thumb-overlay"><div class="reel-platform">Instagram Reel</div><a href="https://www.instagram.com/reel/DXvqloFPzj7/" target="_blank" class="reel-open-btn">Watch ↗</a></div></div>
-        <div class="reel-embed-card fu"><div class="reel-thumb" style="background:linear-gradient(135deg,#0a0800,#151000)"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px"><svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(100,220,150,0.5)"><path d="M12 2a3 3 0 013 3v6a3 3 0 01-6 0V5a3 3 0 013-3zm7 9a7 7 0 01-14 0H3a9 9 0 0018 0h-2z"/></svg><span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(100,220,150,0.5)">Podcast Reel 03</span></div></div><div class="reel-thumb-overlay"><div class="reel-platform">Instagram Reel</div><a href="https://www.instagram.com/reel/DYe_Ui-ygFQ/" target="_blank" class="reel-open-btn">Watch ↗</a></div></div>
-        <div class="reel-embed-card fu"><div class="reel-thumb" style="background:linear-gradient(135deg,#000a0a,#001a1a)"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px"><svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(100,220,150,0.5)"><path d="M12 2a3 3 0 013 3v6a3 3 0 01-6 0V5a3 3 0 013-3zm7 9a7 7 0 01-14 0H3a9 9 0 0018 0h-2z"/></svg><span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(100,220,150,0.5)">Podcast Reel 04</span></div></div><div class="reel-thumb-overlay"><div class="reel-platform">Instagram Reel</div><a href="https://www.instagram.com/reel/DYMmGYDxB03/" target="_blank" class="reel-open-btn">Watch ↗</a></div></div>
-        <div class="reel-embed-card fu"><div class="reel-thumb" style="background:linear-gradient(135deg,#0a0005,#150010)"><div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px"><svg width="48" height="48" viewBox="0 0 24 24" fill="rgba(100,220,150,0.5)"><path d="M12 2a3 3 0 013 3v6a3 3 0 01-6 0V5a3 3 0 013-3zm7 9a7 7 0 01-14 0H3a9 9 0 0018 0h-2z"/></svg><span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(100,220,150,0.5)">Podcast Reel 05</span></div></div><div class="reel-thumb-overlay"><div class="reel-platform">Instagram Reel</div><a href="https://www.instagram.com/reel/DYlkQuLxr-e/" target="_blank" class="reel-open-btn">Watch ↗</a></div></div>
-      </div>
-    </div>
-
-    <!-- MUSIC FILM -->
-    <div class="cat-panel" id="panel-music">
-      <div class="music-card fu">
-        <div class="music-icon">
-          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
-        </div>
-        <div class="music-info">
-          <h3>Music Film — Featured Work</h3>
-          <p>A cinematic music film crafted with emotion, precision, and storytelling at its core. Watch the full video on Google Drive.</p>
-          <div class="music-tags">
-            <span class="mtag">Music Film</span>
-            <span class="mtag">Cinematic Edit</span>
-            <span class="mtag">Color Grade</span>
-            <span class="mtag">Sound Design</span>
-          </div>
-          <div style="margin-top:28px">
-            <a href="https://drive.google.com/file/d/1RNjlv7thioA2idUCCmxvfoBvpPQAUK0B/view" target="_blank" class="btn-gold" style="display:inline-flex">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              Watch Music Film
-            </a>
-          </div>
-        </div>
-      </div>
-      <p style="margin-top:16px;font-size:13px;color:var(--muted);font-style:italic">More music films coming soon — Promo section bhi jald add hoga.</p>
-    </div>
-
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="sec" id="about">
+<!-- SKILLS + BY THE NUMBERS -->
+<section class="sec skills-numbers" id="about">
   <div class="sec-inner">
-    <div class="sec-tag"><div class="sec-tag-line"></div><div class="sec-tag-text">About Me</div></div>
-    <h2 class="sec-title">The Editor<br>Behind the Frame</h2>
-    <div class="about-grid">
-      <div class="about-left">
-        <p class="about-intro">"Every cut is a decision. Every frame is intentional. I don't just edit — I sculpt stories."</p>
-        <p class="about-body">Hi, I'm Jeetu — a professional video editor based in New Delhi, India. I specialise in creating cinematic, high-impact content across a wide range of formats — from AI films and fiction to podcasts, music films and information reels.</p>
-        <p class="about-body">With 5+ years of experience and 100+ projects under my belt, I understand what it takes to turn raw footage into something that genuinely moves an audience. Whether it's a 60-second reel or a full-length film, I bring the same dedication to every single frame.</p>
+    <div class="sn-grid">
 
-        <div class="skills-title">Tools & Skills</div>
-        <div class="skills-list">
-          <div class="skill-item">
-            <span class="skill-name">Final Cut Pro</span>
-            <div class="skill-track"><div class="skill-fill" data-w="85"></div></div>
-            <span class="skill-pct">85%</span>
-          </div>
-          <div class="skill-item">
+      <!-- SKILLS -->
+      <div>
+        <div class="sec-tag"><div class="sec-tag-line"></div><div class="sec-tag-text">Tools &amp; Skills</div></div>
+        <h2 class="sec-title" style="font-size:clamp(30px,3.5vw,44px)">Software I<br>Master</h2>
+        <div class="skills-list" style="margin-top:36px">
+          <div class="skill-item fu">
             <span class="skill-name">Premiere Pro</span>
             <div class="skill-track"><div class="skill-fill" data-w="90"></div></div>
             <span class="skill-pct">90%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item fu">
+            <span class="skill-name">Final Cut Pro</span>
+            <div class="skill-track"><div class="skill-fill" data-w="95"></div></div>
+            <span class="skill-pct">95%</span>
+          </div>
+          <div class="skill-item fu">
             <span class="skill-name">After Effects</span>
             <div class="skill-track"><div class="skill-fill" data-w="80"></div></div>
             <span class="skill-pct">80%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item fu">
             <span class="skill-name">Adobe Photoshop</span>
             <div class="skill-track"><div class="skill-fill" data-w="60"></div></div>
             <span class="skill-pct">60%</span>
           </div>
-          <div class="skill-item">
+          <div class="skill-item fu">
             <span class="skill-name">Canva</span>
-            <div class="skill-track"><div class="skill-fill" data-w="90"></div></div>
-            <span class="skill-pct">90%</span>
+            <div class="skill-track"><div class="skill-fill" data-w="80"></div></div>
+            <span class="skill-pct">80%</span>
           </div>
         </div>
       </div>
 
-      <div class="about-right">
-        <div class="info-blocks">
-          <div class="info-block fu">
-            <div class="info-block-title">Specializations</div>
-            <div class="info-items">
-              <div class="info-item">Podcast Editing</div>
-              <div class="info-item">Information Reels</div>
-              <div class="info-item">Music Films</div>
-              <div class="info-item">Fiction Films</div>
-              <div class="info-item">AI Films</div>
-              <div class="info-item">Film Ads</div>
-              <div class="info-item">Promo Videos</div>
-            </div>
+      <!-- BY THE NUMBERS -->
+      <div>
+        <div class="sec-tag"><div class="sec-tag-line"></div><div class="sec-tag-text">By the Numbers</div></div>
+        <h2 class="sec-title" style="font-size:clamp(30px,3.5vw,44px)">Results That<br>Speak</h2>
+        <div class="numbers-grid" style="margin-top:36px">
+          <div class="num-card fu">
+            <div class="num-big">3+</div>
+            <div class="num-label">Years Experience</div>
           </div>
-          <div class="info-block fu">
-            <div class="info-block-title">Based In</div>
-            <div class="info-items">
-              <div class="info-item">New Delhi, India</div>
-              <div class="info-item">Available Worldwide (Remote)</div>
-              <div class="info-item">Quick Turnaround</div>
-            </div>
+          <div class="num-card fu">
+            <div class="num-big">2000+</div>
+            <div class="num-label">Reels Edited</div>
+          </div>
+          <div class="num-card fu">
+            <div class="num-big">50+</div>
+            <div class="num-label">Happy Clients</div>
           </div>
         </div>
+        <p style="margin-top:24px;font-size:13px;color:var(--muted);line-height:1.8">
+          Available on <span style="color:var(--gold2)">Instagram</span> &amp; <span style="color:var(--gold2)">YouTube</span> platforms. Fast turnaround. Remote-friendly worldwide.
+        </p>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- SERVICES -->
-<section class="sec services" id="services">
-  <div class="sec-inner">
-    <div class="sec-tag"><div class="sec-tag-line"></div><div class="sec-tag-text">What I Do</div></div>
-    <h2 class="sec-title">Services</h2>
-    <p class="sec-sub">Professional video editing services tailored to your vision and platform.</p>
-    <div class="services-grid">
-      <div class="service-card fu">
-        <div class="svc-num">01</div>
-        <div class="svc-title">Podcast Editing</div>
-        <div class="svc-desc">Full podcast production — cuts, B-roll, lower thirds, color, sound mix. Long-form & short clips for YouTube and Instagram.</div>
-      </div>
-      <div class="service-card fu">
-        <div class="svc-num">02</div>
-        <div class="svc-title">Information Reels</div>
-        <div class="svc-desc">Engaging, fast-paced reels that educate and entertain. Optimized for Instagram algorithm and maximum reach.</div>
-      </div>
-      <div class="service-card fu">
-        <div class="svc-num">03</div>
-        <div class="svc-title">Music Films</div>
-        <div class="svc-desc">Cinematic music video editing with precise beat-sync, color grading and visual storytelling that elevates the music.</div>
-      </div>
-      <div class="service-card fu">
-        <div class="svc-num">04</div>
-        <div class="svc-title">Fiction Films</div>
-        <div class="svc-desc">Narrative film editing — pacing, continuity, sound design, color. From short films to web series.</div>
-      </div>
-      <div class="service-card fu">
-        <div class="svc-num">05</div>
-        <div class="svc-title">AI Films</div>
-        <div class="svc-desc">Next-gen AI-generated film editing — combining AI visuals with cinematic storytelling and motion design.</div>
-      </div>
-      <div class="service-card fu">
-        <div class="svc-num">06</div>
-        <div class="svc-title">Film Ads & Promos</div>
-        <div class="svc-desc">High-impact commercial edits, film trailers and promo videos built to grab attention in the first 3 seconds.</div>
-      </div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="sec" id="contact">
+<section class="sec contact-sec" id="contact">
   <div class="sec-inner">
     <div class="sec-tag"><div class="sec-tag-line"></div><div class="sec-tag-text">Let's Work Together</div></div>
-    <h2 class="sec-title">Start a Project</h2>
+    <h2 class="sec-title">Ready to Make<br>Reels That Convert?</h2>
     <div class="contact-wrap">
-      <div class="contact-left">
-        <p class="contact-intro">Have a project in mind? Whether it's a podcast, a film, or a quick reel — I'd love to work with you. Drop a message and let's talk.</p>
+
+      <div>
+        <p class="contact-intro">
+          You've seen the work. Now let's talk about <strong>your project.</strong><br><br>
+          Whether you need 1 reel or 100 — I deliver fast, clean, scroll-stopping edits that <strong>get you results on Instagram.</strong> Message me on WhatsApp and let's get started today.
+        </p>
         <div class="contact-details">
+          <div class="c-item">
+            <div class="c-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            </div>
+            <div>
+              <div class="c-label">WhatsApp</div>
+              <div class="c-val"><a href="https://wa.me/918076130628" target="_blank">+91 80761 30628</a></div>
+            </div>
+          </div>
           <div class="c-item">
             <div class="c-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -649,20 +410,11 @@ footer{padding:52px 56px;border-top:1px solid var(--border2);display:flex;align-
           </div>
           <div class="c-item">
             <div class="c-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.83a16 16 0 006.29 6.29l1.25-1.25a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.72 2z"/></svg>
-            </div>
-            <div>
-              <div class="c-label">Phone / WhatsApp</div>
-              <div class="c-val"><a href="tel:+918076130628">+91 80761 30628</a></div>
-            </div>
-          </div>
-          <div class="c-item">
-            <div class="c-icon">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <div>
               <div class="c-label">Location</div>
-              <div class="c-val">New Delhi, India</div>
+              <div class="c-val"><span style="color:var(--text)">New Delhi, India · Remote Worldwide</span></div>
             </div>
           </div>
         </div>
@@ -671,19 +423,19 @@ footer{padding:52px 56px;border-top:1px solid var(--border2);display:flex;align-
       <form class="contact-form" onsubmit="sendMsg(event)">
         <div class="cf-group">
           <label class="cf-label">Your Name</label>
-          <input class="cf-input" type="text" placeholder="Rahul Sharma" required>
+          <input class="cf-input" type="text" placeholder="XYZ" required>
         </div>
         <div class="cf-group">
           <label class="cf-label">Email</label>
-          <input class="cf-input" type="email" placeholder="rahul@example.com" required>
+          <input class="cf-input" type="email" placeholder="xyz@example.com" required>
         </div>
         <div class="cf-group">
           <label class="cf-label">Project Type</label>
-          <input class="cf-input" type="text" placeholder="Podcast, Reel, Music Film, Fiction...">
+          <input class="cf-input" type="text" placeholder="Reels, AI Film, Podcast, Music Video...">
         </div>
         <div class="cf-group">
           <label class="cf-label">Tell Me About Your Project</label>
-          <textarea class="cf-textarea" rows="4" placeholder="Kya chahiye, kab chahiye, budget kya hai..."></textarea>
+          <textarea class="cf-textarea" rows="4" placeholder="Kitne reels chahiye, platform kya hai, deadline kya hai..."></textarea>
         </div>
         <button type="submit" class="cf-btn" id="cfbtn">
           <span id="cfbtntxt">Send Message</span>
@@ -696,20 +448,20 @@ footer{padding:52px 56px;border-top:1px solid var(--border2);display:flex;align-
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Jeetu Cinema</div>
+  <div class="footer-logo">Jeetu</div>
   <div class="footer-copy">© 2025 Jeetu. All rights reserved.</div>
   <div class="footer-socials">
     <a href="https://www.instagram.com/" target="_blank" class="fsoc" title="Instagram">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
     </a>
     <a href="https://www.youtube.com/" target="_blank" class="fsoc" title="YouTube">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.97A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
-    </a>
-    <a href="mailto:jjeetu168@gmail.com" class="fsoc" title="Email">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 001.95-1.97A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
     </a>
     <a href="https://wa.me/918076130628" target="_blank" class="fsoc" title="WhatsApp">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+    </a>
+    <a href="mailto:jjeetu168@gmail.com" class="fsoc" title="Email">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
     </a>
   </div>
 </footer>
@@ -720,55 +472,32 @@ const cur=document.getElementById('cur'),cur2=document.getElementById('cur2');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
 (function animR(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cur2.style.left=rx+'px';cur2.style.top=ry+'px';requestAnimationFrame(animR)})();
-document.querySelectorAll('a,button,.reel-embed-card,.yt-card,.service-card').forEach(el=>{
+document.querySelectorAll('a,button,.spec-card,.num-card').forEach(el=>{
   el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.5)';cur2.style.width='52px';cur2.style.height='52px'});
   el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';cur2.style.width='32px';cur2.style.height='32px'});
 });
 
 // Scroll nav
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav').classList.toggle('scrolled',scrollY>60);
-});
-
-// Tab switch
-function switchTab(id,btn){
-  document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active'));
-  document.querySelectorAll('.cat-panel').forEach(p=>p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('panel-'+id).classList.add('active');
-  // re-trigger fade-up
-  document.querySelectorAll('#panel-'+id+' .fu').forEach(el=>{
-    el.classList.remove('vis');
-    setTimeout(()=>el.classList.add('vis'),50);
-  });
-}
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',scrollY>60)});
 
 // Intersection observer
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting){
       e.target.classList.add('vis');
-      e.target.querySelectorAll('.skill-fill').forEach(f=>{
-        f.style.width=f.dataset.w+'%';
-      });
+      e.target.querySelectorAll('.skill-fill').forEach(f=>{f.style.width=f.dataset.w+'%'});
     }
   });
 },{threshold:.12});
 document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
 
-// Also observe about section for skills
-const aboutSec=document.getElementById('about');
-if(aboutSec){
-  const obsS=new IntersectionObserver(entries=>{
-    if(entries[0].isIntersecting){
-      document.querySelectorAll('.skill-fill').forEach(f=>{f.style.width=f.dataset.w+'%'});
-    }
-  },{threshold:.2});
-  obsS.observe(aboutSec);
+// skills section observer
+const skillsSec=document.getElementById('about');
+if(skillsSec){
+  new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting) document.querySelectorAll('.skill-fill').forEach(f=>{f.style.width=f.dataset.w+'%'});
+  },{threshold:.2}).observe(skillsSec);
 }
-
-// Initial panel fade
-document.querySelectorAll('#panel-reels .fu').forEach(el=>el.classList.add('vis'));
 
 // Contact form
 function sendMsg(e){
